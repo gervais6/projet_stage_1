@@ -1,0 +1,70 @@
+/* Style global des cartes */
+.card {
+    border-radius: 15px; /* Bordure arrondie uniforme */
+    border: 0;
+    margin-bottom: 1rem;
+    padding: 20px; /* Ajout d'un padding pour l'espacement */
+}
+
+
+/* Styles spécifiques aux éléments de profil */
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; /* Utilisez border-radius pour un cercle */
+}
+
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+
+/* Styles de la section "À propos" */
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+
+/* Styles des formulaires */
+.form-control {
+    border: 1px solid #cfd1d8;
+    border-radius: 10px; /* Ajustez le border-radius ici */
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+/* Styles des boutons */
+.btn {
+    border-radius: 8px; /* Appliquez un border-radius aux boutons */
+}
+
+/* Styles supplémentaires pour les groupes de formulaires */
+.form-group {
+    margin-bottom: 25px; /* Ajustez l'espace selon vos besoins */
+}

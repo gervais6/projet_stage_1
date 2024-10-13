@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
