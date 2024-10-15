@@ -24,7 +24,6 @@ import avatar from '../avatar.png';
 import before from '../before.png';
 import { TextField, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './dashboard.css';
 import { IoMdNotificationsOutline } from "react-icons/io";
