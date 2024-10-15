@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Configurer le dossier des fichiers statiques
 const app = express();
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Servir le dossier uploads
+app.use('uploads', express.static(path.join(__dirname, 'uploads'))); // Servir le dossier uploads
 
 // Configuration de multer pour l'upload d'images
 const storage = multer.diskStorage({
@@ -29,6 +29,10 @@ router.get('/hotels', async (req, res) => {
     res.status(500).json({ message: 'Erreur lors de la récupération des hôtels', error });
   }
 });
+
+
+
+
 
 // Route pour créer un hôtel avec upload de photo
 router.post('/hotels', upload.single('photo'), async (req, res) => {
