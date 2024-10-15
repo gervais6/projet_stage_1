@@ -172,12 +172,12 @@ const Login = () => {
             </div>
           </div>
           <p className="text-muted text-center mt-4 mb-3" style={{ fontSize: 20 }}>
-            <Link href="#" style={{ textDecoration: 'none' }}>
+            <Link href="/mdp" style={{ textDecoration: 'none' }}>
               <span className="forgot-password">Mot de passe oublié ?</span><br /><br />
             </Link>
-            <Link href="/signup" className="text-white ml-1" style={{ textDecoration: 'none' }}>
+            <Link href="/Signup" className="text-white ml-1" style={{ textDecoration: 'none' }}>
               Vous n'avez pas de compte?
-            </Link> <span className="forgot-password">S'inscrire</span>
+            </Link> <Link href="/Signup"  style={{textDecoration:"none"}}><span className="forgot-password">S'inscrire</span> </Link>
           </p>
         </div>
       </div>

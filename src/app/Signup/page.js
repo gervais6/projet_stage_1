@@ -189,9 +189,9 @@ const Signup = () => {
             </div>
           </div>
           <p className="text-muted text-center mt-4 mb-3" style={{ fontSize: 20 }}>
-            <a href="login.html" className="text-white ml-1" style={{ textDecoration: 'none' }}>
+            <Link href="/Login" className="text-white ml-1" style={{ textDecoration: 'none' }}>
             Vous avez déjà un compte?
-            </a> <span className="forgot-password">Se connecter</span>
+            </Link> <Link href="/Login" style={{textDecoration:"none"}}><span className="forgot-password">Se connecter</span> </Link>
           </p>
         </div>
       </div>

@@ -29,9 +29,20 @@ import Link from 'next/link';
 import List from '@mui/material/List';
 import AddIcon from '@mui/icons-material/Add';
 
-const drawerWidth = 270;
+
+const drawerWidth = 280;
 
 const hotel = () => {
+  const [hovered, setHovered] = useState(null);
+  const handleMouseEnter = (index) => {
+    setHovered(index);
+  };
+  
+  const handleMouseLeave = () => {
+    setHovered(null);
+  };
+  
+
   const [hotels, setHotels] = useState([]); // État pour stocker les hôtels
   const [loading, setLoading] = useState(true); // État pour gérer le chargement
   const [searchQuery, setSearchQuery] = useState(''); // État pour la recherche
@@ -62,7 +73,6 @@ const hotel = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
       
       {/* Premier AppBar */}
       <AppBar
@@ -136,7 +146,7 @@ const hotel = () => {
 
 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
   <Typography variant="h6" style={{ marginTop: 10 }}>
-    {/* Le texte ou titre peut être ajouté ici */}
+  Hôtels : {filteredHotels.length}
   </Typography>
 
   <Link href="/nouveau_hotel" style={{textDecoration:'none'}}>
@@ -199,56 +209,100 @@ const hotel = () => {
           </Typography>
         </Box>
         <Divider sx={{ zIndex: 2 }} />
-        <List sx={{ zIndex: 2, mt: 2, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-          <Box>
-            <Typography variant="subtitle1" sx={{ ml: 2, mb: 2, color: 'white', fontSize: 18 }}>
-              Principal
-            </Typography>
-            <Link href="/dashboard" style={{ textDecoration: 'none', color: "white" }}>
-              <ListItem disablePadding >
-                <ListItemButton sx={{ width: '100%', '&:hover': { backgroundColor: 'white', '& .MuiListItemIcon-root': { color: 'black' }, '& .MuiListItemText-root': { color: 'black' }, }, }}>
-                  <ListItemIcon>
-                    <DashboardIcon sx={{ fontSize: 24, color: 'white' }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Dashboard" primaryTypographyProps={{ fontSize: '18px' }} />
-                </ListItemButton>
-              </ListItem>
-            </Link>
-            <Link href="/hotels" style={{ textDecoration: 'none' }}>
-              <ListItem disablePadding>
-                <ListItemButton sx={{ width: '100%', '&:hover': { backgroundColor: 'white', '& .MuiListItemIcon-root, & .MuiListItemText-root': { color: 'black' }, }, }}>
-                  <ListItemIcon>
-                    <Box sx={{ filter: 'brightness(0) invert(1)', transition: 'filter 0.3s', }}>
-                      <Image src={VECTOR} alt="Liste des hôtels" width={24} height={24} />
-                    </Box>
-                  </ListItemIcon>
-                  <ListItemText primary="Liste des hôtels" primaryTypographyProps={{ fontSize: '18px' }} sx={{ color: 'white' }} />
-                </ListItemButton>
-              </ListItem>
-            </Link>
+    <List sx={{ zIndex: 2, mt: 2, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
+      <Box>
+        <Typography sx={{ ml: 2, mb: 2, color: 'white', fontSize: 18 }}>
+          Principal
+        </Typography>
+<Link href="/dashboard" style={{ textDecoration: 'none', color: "white" }}>
+  <ListItem disablePadding>
+    <ListItemButton
+      sx={{
+        width: '100%',
+        color: 'white',
+        '&:hover': { backgroundColor: 'white', color: 'black' },
+      }}
+      onMouseEnter={() => handleMouseEnter(0)}
+      onMouseLeave={handleMouseLeave}
+    >
+      <ListItemIcon sx={{ color: 'inherit' }}>
+        <DashboardIcon sx={{ fontSize: 24 }} />
+      </ListItemIcon>
+      <ListItemText 
+        primary="Dashboard" 
+        primaryTypographyProps={{ fontSize: '18px', color: 'inherit' }} 
+      />
+    </ListItemButton>
+  </ListItem>
+</Link>
+
+
+<Link href="/hotels" style={{ textDecoration: 'none', color: "white" }}>
+  <ListItem disablePadding>
+  <ListItemButton
+  sx={{
+    width: '100%',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: 'white',
+      color: 'black',
+      '& .logo_hotel': {
+        filter: 'invert(1)', // applique un effet de couleur inverse à l'image
+      },
+    },
+  }}
+  onMouseEnter={() => handleMouseEnter(1)}
+  onMouseLeave={handleMouseLeave}
+>
+  <ListItemIcon sx={{ color: 'inherit' }}>
+    <Image
+      src={VECTOR}
+      alt="logo-hotel"
+      className="logo_hotel "
+      style={{ width: 24, height: 24 }}
+    />
+  </ListItemIcon>
+  <ListItemText 
+    primary="Liste des hôtels" 
+    primaryTypographyProps={{ fontSize: '18px', color: 'inherit' }} 
+  />
+</ListItemButton>
+  </ListItem>
+</Link>
+
+
+
+
+
+
+
+
+
+
+      </Box>
+      <hr style={{ marginTop: '400px', border: '1px solid #ccc' }} />
+      <Box sx={{ mt: 'auto', p: 2, display: 'flex', alignItems: 'center', zIndex: 2 }}>
+        <Image src={avatar} style={{ marginRight: 10, borderRadius: '50%', width: 50, height: 50 }} />
+        <Box>
+          <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
+            Mouhamet Badiane
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'green', marginRight: 1 }} />
+            <Typography sx={{ fontSize: 14, color: 'lightgrey' }}>En ligne</Typography>
           </Box>
-          <hr style={{ marginTop: '400px', border: '1px solid #ccc' }} />
-          <Box sx={{ mt: 'auto', p: 2, display: 'flex', alignItems: 'center', zIndex: 2 }}>
-            <Image src={avatar} style={{ marginRight: 10, borderRadius: '50%', width: 50, height: 50 }} />
-            <Box>
-              <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
-                Mouhamet Badiane
-              </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'green', marginRight: 1 }} />
-                <Typography sx={{ fontSize: 14, color: 'lightgrey' }}>En ligne</Typography>
-              </Box>
-            </Box>
-          </Box>
-        </List>
-      </Drawer>
+        </Box>
+      </Box>
+    </List>     
+     </Drawer>
 
       {/* Contenu principal */}
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Toolbar />
         <Box sx={{ marginTop: 15, padding: 2 }}>
           <div className="container">
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+          <div className="row row-cols-md-4 g-4 p-4 row-cols-xl-3 g-4 ">
+
               {loading ? (
                 <Typography variant="h6" sx={{ textAlign: 'center', width: '100%' }}>
                   Chargement des hôtels...
@@ -267,25 +321,19 @@ const hotel = () => {
       backgroundColor:'white'
     }}
   >
-    
 <img 
+ src={hotel.photo ? `http://localhost:8080/uploads/${hotel.photo}` : './1728906809497-image(3).png'} 
 
-src={
-  hotels.photo 
-    ? `http://localhost:8080/hotels/uploads/${hotels.photo}` 
-    : '/default-image.png'
-}
 
 className="card-img-top" 
-      alt={hotel.name} 
-      style={{ borderRadius: '10px 10px 0 0', height: '200px', objectFit: 'cover' }} 
-      
-    />
+  alt={hotel.name} 
+  style={{ borderRadius: '10px 10px 0 0', height: '200px', objectFit: 'cover' }} 
+/>
 
     
 
-    <div className="card-body" >
-    <p className="card-text" style={{ color: '#8D4B38', fontSize: '12px' }}> {hotel.address}</p>
+    <div className="card-body " >
+    <p className="card-text" style={{ color: '#8D4B38', fontSize: '11px' }}> {hotel.address}</p>
       <h5 className="card-title" style={{ fontWeight: '600', color: '#333',fontSize: '20px' }}>{hotel.name}</h5>
       <p className="card-text" style={{ color: '#555', fontSize: '14px' }}>{hotel.pricePerNight} {hotel.currency} par nuit</p>
 

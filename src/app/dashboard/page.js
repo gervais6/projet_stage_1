@@ -1,4 +1,9 @@
+"use client";
+
+
 import * as React from 'react';
+import {useState } from 'react';
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -25,9 +30,19 @@ import './dashboard.css';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Link from 'next/link';
 
+
 const drawerWidth = 270;
 
 const dashboard = () => {
+const [hovered, setHovered] = useState(null);
+const handleMouseEnter = (index) => {
+  setHovered(index);
+};
+
+const handleMouseLeave = () => {
+  setHovered(null);
+};
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -108,159 +123,128 @@ const dashboard = () => {
 
       {/* Drawer */}
       <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+            backgroundImage: `url(${before.src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            color: 'white',
+          },
+        }}
+        variant="permanent"
+        anchor="left"
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(2, 2, 2, 0.7)',
+            zIndex: 1,
+          }}
+        />
+        <Box sx={{ display: 'flex', alignItems: 'center', m: 2, zIndex: 2 }}>
+          <Image src={SVG} alt="Product Icon" width={30} height={30} style={{ marginRight: 8 }} />
+          <Typography variant="h6" sx={{ color: 'white', fontWeight: 1000, ml: 2 }}>
+            RED PRODUCT
+          </Typography>
+        </Box>
+        <Divider sx={{ zIndex: 2 }} />
+    <List sx={{ zIndex: 2, mt: 2, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
+      <Box>
+        <Typography sx={{ ml: 2, mb: 2, color: 'white', fontSize: 18 }}>
+          Principal
+        </Typography>
+<Link href="/dashboard" style={{ textDecoration: 'none', color: "white" }}>
+  <ListItem disablePadding>
+    <ListItemButton
+      sx={{
+        width: '100%',
+        color: 'white',
+        '&:hover': { backgroundColor: 'white', color: 'black' },
+      }}
+      onMouseEnter={() => handleMouseEnter(0)}
+      onMouseLeave={handleMouseLeave}
+    >
+      <ListItemIcon sx={{ color: 'inherit' }}>
+        <DashboardIcon sx={{ fontSize: 24 }} />
+      </ListItemIcon>
+      <ListItemText 
+        primary="Dashboard" 
+        primaryTypographyProps={{ fontSize: '18px', color: 'inherit' }} 
+      />
+    </ListItemButton>
+  </ListItem>
+</Link>
+
+
+<Link href="/hotels" style={{ textDecoration: 'none', color: "white" }}>
+  <ListItem disablePadding>
+  <ListItemButton
   sx={{
-    width: drawerWidth,
-    flexShrink: 0,
-    '& .MuiDrawer-paper': {
-      width: drawerWidth,
-      boxSizing: 'border-box',
-      backgroundImage: `url(${before.src})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      color: 'white',
+    width: '100%',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: 'white',
+      color: 'black',
+      '& .logo_hotel': {
+        filter: 'invert(1)', // applique un effet de couleur inverse à l'image
+      },
     },
   }}
-  variant="permanent"
-  anchor="left"
+  onMouseEnter={() => handleMouseEnter(1)}
+  onMouseLeave={handleMouseLeave}
 >
-  <Box
-    sx={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(2, 2, 2, 0.7)',
-      zIndex: 1,
-    }}
-  />
-
-  <Box sx={{ display: 'flex', alignItems: 'center', m: 2, zIndex: 2 }}>
+  <ListItemIcon sx={{ color: 'inherit' }}>
     <Image
-      src={SVG}
-      alt="Product Icon"
-      width={30}
-      height={30}
-      style={{ marginRight: 8 }}
+      src={VECTOR}
+      alt="logo-hotel"
+      className="logo_hotel "
+      style={{ width: 24, height: 24 }}
     />
-    <Typography variant="h6" sx={{ color: 'white', fontWeight: 1000, ml: 2 }}>
-      RED PRODUCT
-    </Typography>
-  </Box>
-
-  <Divider sx={{ zIndex: 2 }} />
-  <List sx={{ zIndex: 2, mt: 2, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-    <Box>
-      <Typography variant="subtitle1" sx={{ ml: 2, mb: 2, color: 'white', fontSize: 18 }}>
-        Principal
-      </Typography>
-
-      <Link href="/dashboard" style={{textDecoration:'none',color:"white"}}>   <ListItem disablePadding >
-        <ListItemButton
-          sx={{
-            width: '100%',
-            '&:hover': {
-              backgroundColor: 'white',
-              '& .MuiListItemIcon-root': {
-                color: 'black',
-              },
-              '& .MuiListItemText-root': {
-                color: 'black',
-              },
-            },
-          }}
-        >
-          <ListItemIcon>
-            <DashboardIcon sx={{ fontSize: 24, color: 'white' }} />
-          </ListItemIcon>
-          <ListItemText
-            primary="Dashboard"
-            primaryTypographyProps={{ fontSize: '18px' }}
-          />
-        </ListItemButton>
-      </ListItem>
-      </Link>  
-
-
-      <Link href="/hotels" style={{textDecoration:'none'}}>
-       <ListItem disablePadding>
-        <ListItemButton
-          sx={{
-            width: '100%',
-            '&:hover': {
-              backgroundColor: 'white',
-              '& .MuiListItemIcon-root, & .MuiListItemText-root': {
-                color: 'black',
-              },
-            },
-          }}
-        >
-          <ListItemIcon>
-            <Box
-              sx={{
-                filter: 'brightness(0) invert(1)',
-                transition: 'filter 0.3s',
-              }}
-            >
-              <Image src={VECTOR} alt="Liste des hôtels" width={24} height={24} />
-            </Box>
-          </ListItemIcon>
-          <ListItemText
-            primary="Liste des hôtels"
-            primaryTypographyProps={{ fontSize: '18px' }}
-            sx={{ color: 'white' }}
-          />
-        </ListItemButton>
-      </ListItem>
-      </Link>
-
-    </Box>
-    <hr style={{ marginTop: '400px', border: '1px solid #ccc'  }} />
-{/* Section de l'utilisateur en bas */}
-<Box
-  sx={{
-    mt: 'auto',
-    p: 2,
-    display: 'flex', // Utiliser flexbox
-    alignItems: 'center', // Centrer verticalement
-    zIndex: 2,
-  }}
->
-  <Image
-    src={avatar}
-    style={{
-      marginRight: 10, // Espace à droite de l'avatar
-      borderRadius: '50%', // Arrondi de l'avatar
-      width: 50, // Taille de l'avatar
-      height: 50,
-    }}
+  </ListItemIcon>
+  <ListItemText 
+    primary="Liste des hôtels" 
+    primaryTypographyProps={{ fontSize: '18px', color: 'inherit' }} 
   />
-  <Box>
-    <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
-      Mouhamet Badiane
-    </Typography>
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box
-        sx={{
-          width: 10, // Largeur du badge
-          height: 10, // Hauteur du badge
-          borderRadius: '50%', // Arrondi du badge
-          bgcolor: 'green', // Couleur verte
-          marginRight: 1, // Espace à droite du badge
-        }}
-      />
-      <Typography sx={{ fontSize: 14, color: 'lightgrey' }}>
-        En ligne
-      </Typography>
-    </Box>
-  </Box>
-</Box>
+</ListItemButton>
+  </ListItem>
+</Link>
 
 
 
-  </List>
-</Drawer>
+
+
+
+
+
+
+
+      </Box>
+      <hr style={{ marginTop: '400px', border: '1px solid #ccc' }} />
+      <Box sx={{ mt: 'auto', p: 2, display: 'flex', alignItems: 'center', zIndex: 2 }}>
+        <Image src={avatar} style={{ marginRight: 10, borderRadius: '50%', width: 50, height: 50 }} />
+        <Box>
+          <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
+            Mouhamet Badiane
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'green', marginRight: 1 }} />
+            <Typography sx={{ fontSize: 14, color: 'lightgrey' }}>En ligne</Typography>
+          </Box>
+        </Box>
+      </Box>
+    </List>     
+     </Drawer>
+
+
 
 
       {/* Contenu principal */}
