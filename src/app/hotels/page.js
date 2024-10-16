@@ -86,7 +86,7 @@ const Hotel = () => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap sx={{ flexGrow: 1, fontWeight: 1000 }}>
-            Liste des hôtels 
+            Liste des hôtel 
           </Typography>
           <TextField
             variant="outlined"
@@ -269,6 +269,7 @@ const Hotel = () => {
 </ListItemButton>
   </ListItem>
 </Link>
+
 
       </Box>
       <hr style={{ marginTop: '400px', border: '1px solid #ccc' }} />
