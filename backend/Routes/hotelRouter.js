@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
-const Hotel = require('../models/hotel');
+const Hotel = require('../Models/hotel');
 const router = express.Router();
 
 // Configurer le dossier des fichiers statiques

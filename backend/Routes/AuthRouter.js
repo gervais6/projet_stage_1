@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user'); // Assurez-vous d'avoir le modèle User configuré
+const User = require('../Models/user'); // Assurez-vous d'avoir le modèle User configuré
 const router = express.Router();
 
 // Route pour la connexion
