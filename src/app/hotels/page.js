@@ -86,7 +86,7 @@ const Hotel = () => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap sx={{ flexGrow: 1, fontWeight: 1000 }}>
-            Liste des hôtel 
+            Liste des hôtels 
           </Typography>
           <TextField
             variant="outlined"
@@ -165,7 +165,7 @@ const Hotel = () => {
         }
       }}
     >
-      Ajouter un hôtel
+      Ajouter un hôtels 
     </Button>
   </Link>
 </Toolbar>
@@ -314,7 +314,7 @@ const Hotel = () => {
     }}
   >
 <img 
- src={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : '../1728906809497-image(3).png'} 
+ src={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : './1728906809497-image(3).png'} 
 
 
 className="card-img-top" 
