@@ -83,7 +83,7 @@ const Signup = () => {
                   <div className="p-5">
                     <div className="mb-5">
                       <h3 className="h4 font-weight-bold text-theme" style={{ marginBottom: 50, fontSize: 18 }}>
-                        Inscrivez-vous en tant que Admin
+                       <p>Inscrivez-vous en tant que Admin</p> 
                       </h3>
                     </div>
 
@@ -165,7 +165,7 @@ const Signup = () => {
                             marginLeft: 10,
                           }}
                         >
-                          Accepter les termes et la politique
+                          <p>Accepter les termes et la politique</p>
                         </label>
                       </div>
                       <button
@@ -180,7 +180,7 @@ const Signup = () => {
                           textAlign: 'center',
                         }}
                       >
-                        S'inscrire 
+                       <p>S &apos;inscrire </p>  
                       </button>
                     </form>
                   </div>
@@ -190,7 +190,7 @@ const Signup = () => {
           </div>
           <p className="text-muted text-center mt-4 mb-3" style={{ fontSize: 20 }}>
             <Link href="/Login" className="text-white ml-1" style={{ textDecoration: 'none' }}>
-            Vous avez déjà un compte?
+            <p>Vous avez déjà un compte?</p>
             </Link> <Link href="/Login" style={{textDecoration:"none"}}><span className="forgot-password">Se connecter</span> </Link>
           </p>
         </div>

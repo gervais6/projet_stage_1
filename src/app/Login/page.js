@@ -148,7 +148,7 @@ const Login = () => {
                             marginLeft: 10,
                           }}
                         >
-                          Gardez-moi connecté
+                          <p>Gardez-moi connecté</p> 
                         </label>
                       </div>
                       <button
@@ -163,7 +163,7 @@ const Login = () => {
                           textAlign: 'center',
                         }}
                       >
-                        Se connecter
+                        <p>Se connecter</p> 
                       </button>
                     </form>
                   </div>
@@ -176,8 +176,8 @@ const Login = () => {
               <span className="forgot-password">Mot de passe oublié ?</span><br /><br />
             </Link>
             <Link href="/Signup" className="text-white ml-1" style={{ textDecoration: 'none' }}>
-              Vous n'avez pas de compte?
-            </Link> <Link href="/Signup"  style={{textDecoration:"none"}}><span className="forgot-password">S'inscrire</span> </Link>
+             <p>Vous n &apos;avez pas de compte?</p> 
+            </Link> <Link href="/Signup"  style={{textDecoration:"none"}}><span className="forgot-password">S &apos;inscrire</span> </Link>
           </p>
         </div>
       </div>

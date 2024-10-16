@@ -32,7 +32,7 @@ import Link from 'next/link';
 
 const drawerWidth = 270;
 
-const dashboard = () => {
+const Dashboard = () => {
 const [hovered, setHovered] = useState(null);
 const handleMouseEnter = (index) => {
   setHovered(index);
@@ -150,7 +150,7 @@ const handleMouseLeave = () => {
           }}
         />
         <Box sx={{ display: 'flex', alignItems: 'center', m: 2, zIndex: 2 }}>
-          <Image src={SVG} alt="Product Icon" width={30} height={30} style={{ marginRight: 8 }} />
+          <Image src={SVG} alt="Product Icon"  width={30} height={30} style={{ marginRight: 8 }} />
           <Typography variant="h6" sx={{ color: 'white', fontWeight: 1000, ml: 2 }}>
             RED PRODUCT
           </Typography>
@@ -229,7 +229,7 @@ const handleMouseLeave = () => {
       </Box>
       <hr style={{ marginTop: '400px', border: '1px solid #ccc' }} />
       <Box sx={{ mt: 'auto', p: 2, display: 'flex', alignItems: 'center', zIndex: 2 }}>
-        <Image src={avatar} style={{ marginRight: 10, borderRadius: '50%', width: 50, height: 50 }} />
+        <Image src={avatar}  alt="Description de l'image"  style={{ marginRight: 10, borderRadius: '50%', width: 50, height: 50 }} />
         <Box>
           <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
             Mouhamet Badiane
@@ -357,4 +357,4 @@ const handleMouseLeave = () => {
   );
 };
 
-export default dashboard;
+export default Dashboard;

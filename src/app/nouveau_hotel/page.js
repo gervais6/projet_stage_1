@@ -91,7 +91,7 @@ const NouveauHotel = () => {
                 {/* Champs du formulaire */}
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
                   <div className="form-group">
-                    <label htmlFor="name" style={{ marginBottom: '0.5rem' }}>Nom de l'hôtel</label>
+                    <label htmlFor="name" style={{ marginBottom: '0.5rem' }}>Nom de l &apos;hôtel</label>
                     <input
                       type="text"
                       className="form-control"

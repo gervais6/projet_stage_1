@@ -8,7 +8,7 @@ import SVG from '../SVG.png'; // Assurez-vous que le chemin vers l'image est cor
 
 import './mdpo.css';
 
-const mdp = () => {
+const Mdp = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -105,4 +105,4 @@ const mdp = () => {
   );
 };
 
-export default mdp;
+export default Mdp;

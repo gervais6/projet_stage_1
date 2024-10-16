@@ -32,7 +32,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 const drawerWidth = 280;
 
-const hotel = () => {
+const Hotel = () => {
   const [hovered, setHovered] = useState(null);
   const handleMouseEnter = (index) => {
     setHovered(index);
@@ -365,4 +365,4 @@ className="card-img-top"
   );
 };
 
-export default hotel;
+export default Hotel;
