@@ -34,7 +34,7 @@ const Signup = () => {
     const userData = { name, email, password };
 
     try {
-      const response = await fetch('http://localhost:8080/auth/signup/', {
+      const response = await fetch('https://projet-stage-1-3.onrender.com/auth/signup/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

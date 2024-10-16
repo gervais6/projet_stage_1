@@ -47,7 +47,7 @@ const NouveauHotel = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:8080/hotels/hotels', {
+      const response = await fetch('https://projet-stage-1-3.onrender.com/hotels/hotels', {
         method: 'POST',
         body: formDataToSend
       });
