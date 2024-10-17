@@ -31,13 +31,12 @@ import AddIcon from '@mui/icons-material/Add';
 import { useTheme } from '@mui/material/styles';
 
 
-const drawerWidth = 280;
 
 const Hotel = () => {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Écran mobile
-  const drawerWidth = isMobile ? 100 :150; // Largeur du drawer en fonction de la taille de l'écran
+  const drawerWidth = isMobile ? 240 : 300; // Largeur du drawer en fonction de la taille de l'écran
 
   const [hovered, setHovered] = useState(null);
   const handleMouseEnter = (index) => {
