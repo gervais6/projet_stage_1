@@ -314,7 +314,7 @@ const Hotel = () => {
     }}
   >
 <img 
- src={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : './1728906809497-image(3).png'} 
+ src={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : '../1728906809497-image(3).png'} 
 
 
 className="card-img-top" 
