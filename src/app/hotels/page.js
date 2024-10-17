@@ -29,11 +29,14 @@ import Link from 'next/link';
 import List from '@mui/material/List';
 import AddIcon from '@mui/icons-material/Add';
 import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 
 
 const drawerWidth = 280;
 
 const Hotel = () => {
+  const isMobile = useMediaQuery('(max-width:600px)'); // Détecte si l'écran est petit (mobile)
+  const drawerWidth = isMobile ? 200 : 280; // Réduit la largeur sur mobile
 
   
   const [hovered, setHovered] = useState(null);
@@ -191,8 +194,10 @@ const Hotel = () => {
             color: 'white',
           },
         }}
-        variant="permanent"
+        
+        variant={isMobile ? 'temporary' : 'permanent'} // Drawer temporaire sur mobile
         anchor="left"
+
       >
         <Box
           sx={{
