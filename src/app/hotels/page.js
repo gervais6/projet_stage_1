@@ -165,7 +165,7 @@ const Hotel = () => {
         }
       }}
     >
-      Ajouter un hôtels 
+      Ajouter un hôtel
     </Button>
   </Link>
 </Toolbar>
