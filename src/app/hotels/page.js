@@ -20,7 +20,7 @@ import avatar from '../avatar.png';
 import before from '../before.png';
 import SVG     from '../SVG.png';
 
-import { TextField, InputAdornment, IconButton, Button ,useMediaQuery} from '@mui/material';
+import { TextField, InputAdornment, IconButton, Button} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './hotel.css';
