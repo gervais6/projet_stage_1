@@ -20,7 +20,7 @@ import avatar from '../avatar.png';
 import before from '../before.png';
 import SVG     from '../SVG.png';
 
-import { TextField, InputAdornment, IconButton, Button } from '@mui/material';
+import { TextField, InputAdornment, IconButton, Button ,useMediaQuery} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './hotel.css';
@@ -28,11 +28,17 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import Link from 'next/link';
 import List from '@mui/material/List';
 import AddIcon from '@mui/icons-material/Add';
+import { useTheme } from '@mui/material/styles';
 
 
 const drawerWidth = 280;
 
 const Hotel = () => {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Écran mobile
+  const drawerWidth = isMobile ? 240 : 300; // Largeur du drawer en fonction de la taille de l'écran
+
   const [hovered, setHovered] = useState(null);
   const handleMouseEnter = (index) => {
     setHovered(index);
