@@ -28,15 +28,13 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import Link from 'next/link';
 import List from '@mui/material/List';
 import AddIcon from '@mui/icons-material/Add';
-import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 
 
-const drawerWidth = 280;
 
 const Hotel = () => {
   const isMobile = useMediaQuery('(max-width:600px)'); // Détecte si l'écran est petit (mobile)
-  const drawerWidth = isMobile ? 200 : 280; // Réduit la largeur sur mobile
+  const drawerWidth = isMobile ? 180 : 150; // Réduit la largeur sur mobile
 
   
   const [hovered, setHovered] = useState(null);
