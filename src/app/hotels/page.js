@@ -179,7 +179,7 @@ const Hotel = () => {
 </AppBar>
 
 
-<Drawer
+    <Drawer
       sx={{
         width: drawerWidth,
         flexShrink: 0,
