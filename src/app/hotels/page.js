@@ -313,8 +313,7 @@ const Hotel = () => {
       backgroundColor:'white'
     }}
   >
-<img 
- src={hotel.photo ? `https://localhost:8080/uploads/${hotel.photo}` : './1728906809497-image(3).png'} 
+<img src={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : './1.png'} 
 
 
 className="card-img-top" 
