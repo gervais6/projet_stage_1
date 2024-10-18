@@ -171,7 +171,7 @@ const Hotel = () => {
 </Toolbar>
 
 
-</AppBar>
+      </AppBar>
 
 
       <Drawer
