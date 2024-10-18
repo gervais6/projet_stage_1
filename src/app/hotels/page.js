@@ -176,16 +176,20 @@ const Hotel = () => {
 
       <Drawer
         sx={{
-          width: drawerWidth,
+
+          width: { xs: '100%', sm: drawerWidth }, // Utiliser 100% sur les petits écrans
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: drawerWidth,
+           width: { xs: '100%', sm: drawerWidth }, // Utiliser 100% sur les petits écrans
             boxSizing: 'border-box',
             backgroundImage: `url(${before.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             color: 'white',
+
+
+            
           },
         }}
         variant="permanent"
