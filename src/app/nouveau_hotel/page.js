@@ -64,7 +64,6 @@ const NouveauHotel = () => {
     }
   };
   
-  
   // Fonction pour valider une adresse e-mail
   function isValidEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -80,7 +79,7 @@ const NouveauHotel = () => {
               <div className="row gutters">
                 <div className="col-12">
                   <Link href="/hotels" style={{ textDecoration: 'none', color: 'black' }}>
-                    <h6 className="mb-3" style={{ textTransform: 'uppercase' }}>
+                    <h6 className="mb-3" style={{ textTransform: 'uppercase', fontSize: 12 }}>
                       <FaArrowLeftLong style={{ marginRight: 10 }} />
                       Créer un nouveau hôtel
                     </h6>
@@ -91,7 +90,7 @@ const NouveauHotel = () => {
                 {/* Champs du formulaire */}
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
                   <div className="form-group">
-                    <label htmlFor="name" style={{ marginBottom: '0.5rem' }}>Nom de l &apos;hôtel</label>
+                    <label htmlFor="name" style={{ marginBottom: '0.5rem' }}>Nom de l&apos;hôtel</label>
                     <input
                       type="text"
                       className="form-control"
@@ -105,7 +104,7 @@ const NouveauHotel = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div className="col-lg-6 col-md-6 col-sm -12 mb-3">
                   <div className="form-group">
                     <label htmlFor="address" style={{ marginBottom: '0.5rem' }}>Adresse</label>
                     <input
@@ -113,7 +112,7 @@ const NouveauHotel = () => {
                       className="form-control"
                       id="address"
                       name="address"
-                      placeholder="Entrez l'adresse"
+                      placeholder="Entrez l&apos;adresse"
                       style={{ height: '40px' }}
                       value={formData.address}
                       onChange={handleChange}
@@ -129,7 +128,7 @@ const NouveauHotel = () => {
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder="Entrez l'email"
+                      placeholder="Entrez l&apos;email"
                       style={{ height: '40px' }}
                       value={formData.email}
                       onChange={handleChange}

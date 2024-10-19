@@ -1,4 +1,8 @@
 /* Style global des cartes */
+
+body {
+    background-color: #eee;
+}
 .card {
     border-radius: 15px; /* Bordure arrondie uniforme */
     border: 0;
