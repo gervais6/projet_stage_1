@@ -48,7 +48,7 @@ const Hotel = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch('https://projet-stage-1-3.onrender.com/hotels/hotels');
+        const response = await fetch('http://127.0.0.1:8000/api/hotels/');
         const data = await response.json();
         setHotels(data);
       } catch (error) {
@@ -364,7 +364,9 @@ const Hotel = () => {
                       }}
                     >
                       <img
-                        src ={hotel.photo ? `https://projet-stage-1-3.onrender.com/uploads/${hotel.photo}` : './1.png'}
+
+                        src={hotel.photo ? hotel.photo : './1.png'}
+
                         className="card-img-top"
                         alt={hotel.name}
                         style={{ borderRadius: '10px 10px 0 0', height: '200px', objectFit: 'cover' }}

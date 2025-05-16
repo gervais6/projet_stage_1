@@ -10,7 +10,7 @@ const NouveauHotel = () => {
     address: '',
     email: '',
     phone: '',
-    pricePerNight: '',
+    price_per_night: '',
     currency: 'USD',
     photo: null
   });
@@ -40,14 +40,14 @@ const NouveauHotel = () => {
     formDataToSend.append('address', formData.address);
     formDataToSend.append('email', formData.email);
     formDataToSend.append('phone', formData.phone);
-    formDataToSend.append('pricePerNight', formData.pricePerNight);
+    formDataToSend.append('price_per_night', formData.price_per_night);
     formDataToSend.append('currency', formData.currency);
     if (formData.photo) {
       formDataToSend.append('photo', formData.photo);
     }
   
     try {
-      const response = await fetch('https://projet-stage-1-3.onrender.com/hotels/hotels', {
+      const response = await fetch('http://127.0.0.1:8000/api/hotels/', {
         method: 'POST',
         body: formDataToSend
       });
@@ -158,11 +158,11 @@ const NouveauHotel = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id="pricePerNight"
-                      name="pricePerNight"
+                      id="price_per_night"
+                      name="price_per_night"
                       placeholder="Entrez votre montant"
                       style={{ height: '40px' }}
-                      value={formData.pricePerNight}
+                      value={formData.price_per_night}
                       onChange={handleChange}
                     />
                   </div>
