@@ -49,6 +49,7 @@ const Hotel = () => {
     const fetchHotels = async () => {
       try {
         const response = await fetch('http://127.0.0.1:8000/api/hotels/');
+       
         const data = await response.json();
         setHotels(data);
       } catch (error) {
@@ -367,10 +368,14 @@ const Hotel = () => {
 
                         src={hotel.photo ? hotel.photo : './1.png'}
 
+                        
+
                         className="card-img-top"
                         alt={hotel.name}
                         style={{ borderRadius: '10px 10px 0 0', height: '200px', objectFit: 'cover' }}
                       />
+
+  
 
                       <div className="card-body">
                         <p className="card-text" style={{ color: '#8D4B38', fontSize: '11px' }}>
