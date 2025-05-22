@@ -34,11 +34,10 @@ const Signup = () => {
     const userData = { name, email, password };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/register/', {
+      const response = await fetch('https://redhoteldjango.onrender.com/api/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-              'Content-Type': 'application/json',
 
         },
         body: JSON.stringify(userData),
